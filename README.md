@@ -1,5 +1,4 @@
 # A simple network in Pytorch
-====
 
 In this notebook is a very simple network with 4 layers.
 
@@ -8,19 +7,24 @@ In this notebook is a very simple network with 4 layers.
 3. Hidden Layer 2 - 4 neurons
 4. Output Layer - 1 neuron
 
-### What are neurons?
+What are neurons?
 ===
 
 **Neurons** are the storage units that act as placeholders for data and results of computation. When many of them are grouped together, it is called a layer. And when many layers are stacked together, they form the neural network
 
-How does the computation happen?
+How do we start?
 ===
 
-Computation of data is done by the multiplications of parameters called weights to the flowing data to amplify/suppress the incoming features. This is commonly known as the feed forward operation when data is processed from the input to the output layer for batches of data. The **weights** are simply floating point numbers that follow a strategy for **initialization** which depends on the activation function. 
+The network training can begin with **weight initialization** which sets starting values for the parameters that characterize a NN, the weights. The **weights** are simply matrices of floating point numbers that define the computation of data through the network from the input layer to the output layer. which depends on the activation function. 
 
 For tanh which is used in the notebook and generally sigmoid, the best initialization is observed to be the _Xavier Initialization_ which is intiialization by using a uniform distribution. 
 
 For the ReLU activation however, it is observed that Xavier initialization has challenges since the overall variance of a uniform distribution is less in value in comparison to variance of a Gaussian distribution. Variance being higher (closer to 1) allows more robustness towards gradient issues such as vanishing and exploding. Hence here, the _He Initialization_ is used which draws data from a Gaussian/Normal distribution. In the above notebook, we have used the **He initialization**
+
+How does the computation happen?
+===
+
+Computation of data is done by the multiplications of weights to the flowing data to amplify/suppress the incoming features. This is commonly known as the feed forward operation when data is processed from the input to the output layer for batches of data.
 
 Do we know if the computation was correct or not?
 ===
